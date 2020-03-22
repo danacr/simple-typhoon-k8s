@@ -1,6 +1,6 @@
 # Simple Typhoon K8s
 
-## Tiny bash setup script for Typhoon K8s on Digital Ocean
+### Tiny bash setup script for Typhoon K8s on Digital Ocean
 
 The purpose of this repository is to provision a cluster in a really simple and fast way. Result of [this](https://twitter.com/errordeveloper/status/1240262848351211520) twitter thread.
 
