@@ -20,7 +20,6 @@ import (
 	"context"
 	"encoding/base64"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"time"
@@ -88,12 +87,8 @@ func uploadcfg() error {
 }
 
 func cfgencrypt() error {
-	key, err := ioutil.ReadFile("config/pubkey.b64")
-	if err != nil {
-		log.Fatal(err)
-	}
 	// Decode public key
-	decoded, err := base64.StdEncoding.DecodeString(string(key))
+	decoded, err := base64.StdEncoding.DecodeString(os.Getenv("pubkey"))
 	if err != nil {
 		return err
 	}

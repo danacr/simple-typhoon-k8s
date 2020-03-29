@@ -1,7 +1,5 @@
 #!/bin/bash
 
-printf "%s" "$pubkey" > "config/pubkey.b64"
-
 eval `ssh-agent` # create the process
 
 # Get ssh fingerprint
@@ -21,7 +19,7 @@ export GOOGLE_APPLICATION_CREDENTIALS=/home/terraform/config/service-account-key
 
 stk create
 
-envsubst < main.tf | tee main.tf
+envsubst < main.tf.bak | tee main.tf
 
 terraform init
 terraform plan -out create.plan 
