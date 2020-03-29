@@ -38,14 +38,14 @@ terraform destroy -auto-approve
 Test:
 
 ```
-docker run -e HOW_LONG=1 -e CLUSTER_VERSION=1.17.4 -e TF_VAR_cluster_region=nyc3 -e TF_VAR_cluster_id=70a45d58-a13d-4f39-bef1-707b19ebfe55 -it test
+docker run -e HOW_LONG=1 -e CLUSTER_VERSION=v1.17.4 -e TF_VAR_cluster_region=nyc3 -e TF_VAR_cluster_id=70a45d58-a13d-4f39-bef1-707b19ebfe55 danacr/stk:latest
 ```
 
 Dev:
 
 ```
 docker build . -t test
-docker run -e CLUSTER_VERSION=1.17.4 -e TF_VAR_cluster_region=nyc3 -e TF_VAR_cluster_id=70a45d58-a13d-4f39-bef1-707b19ebfe55 -it test bash -c "source create.sh"
-docker run -e CLUSTER_VERSION=1.17.4 -e TF_VAR_cluster_region=nyc3 -e TF_VAR_cluster_id=70a45d58-a13d-4f39-bef1-707b19ebfe55 -it test bash -c "source destroy.sh"
+docker run -e CLUSTER_VERSION=v1.17.4 -e TF_VAR_cluster_region=nyc3 -e TF_VAR_cluster_id=70a45d58-a13d-4f39-bef1-707b19ebfe55 -it test bash -c "source create.sh"
+docker run -e CLUSTER_VERSION=v1.17.4 -e TF_VAR_cluster_region=nyc3 -e TF_VAR_cluster_id=70a45d58-a13d-4f39-bef1-707b19ebfe55 -it test bash -c "source destroy.sh"
 https://storage.googleapis.com/70a45d58-a13d-4f39-bef1-707b19ebfe55/cluster-config.gpg
 ```

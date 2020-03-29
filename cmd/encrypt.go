@@ -88,7 +88,7 @@ func uploadcfg() error {
 }
 
 func cfgencrypt() error {
-	key, err := ioutil.ReadFile("pubkey.b64")
+	key, err := ioutil.ReadFile("config/pubkey.b64")
 	if err != nil {
 		log.Fatal(err)
 	}

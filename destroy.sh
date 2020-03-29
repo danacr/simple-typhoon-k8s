@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export TF_VAR_do_token=$(< do_token)
+export TF_VAR_do_token=$(< config/do_token)
 
-export GOOGLE_APPLICATION_CREDENTIALS=/home/terraform/service-account-key.json
+export GOOGLE_APPLICATION_CREDENTIALS=/home/terraform/config/service-account-key.json
 
 export TF_VAR_ssh_fingerprint="hello"
 

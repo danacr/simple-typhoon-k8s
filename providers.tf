@@ -5,10 +5,8 @@ provider "digitalocean" {
 }
 
 provider "google" {
-  credentials = file("/home/terraform/service-account-key.json")
-  project     = "k8sftw"
-  region      = "us-east1"
-
+  project = "k8sftw"
+  region  = "us-east1"
 }
 
 provider "ct" {

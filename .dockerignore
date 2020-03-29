@@ -6,3 +6,4 @@ service-account-key.json
 firestore.json
 stk
 pubkey.b64
+config/

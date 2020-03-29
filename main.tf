@@ -1,11 +1,10 @@
 module "cluster" {
-  source = "git::https://github.com/poseidon/typhoon//digital-ocean/container-linux/kubernetes?ref=v$CLUSTER_VERSION"
+  source = "git::https://github.com/poseidon/typhoon//digital-ocean/container-linux/kubernetes?ref=$CLUSTER_VERSION"
 
   # Digital Ocean
   cluster_name = var.cluster_id
   region       = var.cluster_region
   dns_zone     = "k8stfw.com"
-  image        = "coreos-stable"
   # controller_type = "s-4vcpu-8gb"
   # worker_type     = "s-2vcpu-2gb"
 
