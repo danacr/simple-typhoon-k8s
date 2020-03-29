@@ -33,4 +33,12 @@ Destroy a cluster:
 terraform destroy -auto-approve
 ```
 
-> Note: If you change the cluster region to something like AMS3, ETA for your cluster will be 30 minutes
+> Note: ETA for your cluster can be between 3 and 30 minutes. It depends on the region and time of day.
+
+Dev:
+
+```
+docker build . -t test
+docker run -e CLUSTER_VERSION=1.17.4 -e TF_VAR_cluster_region=nyc3 -e TF_VAR_cluster_id=9d85d4cd-710d-11ea-a400-94498cc1472a -it test bash -c "source create.sh"
+docker run -e CLUSTER_VERSION=1.17.4 -e TF_VAR_cluster_region=nyc3 -e TF_VAR_cluster_id=9d85d4cd-710d-11ea-a400-94498cc1472a -it test bash -c "source destroy.sh"
+```

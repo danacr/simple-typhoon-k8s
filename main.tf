@@ -1,9 +1,9 @@
 module "cluster" {
-  source = "git::https://github.com/poseidon/typhoon//digital-ocean/container-linux/kubernetes?ref=v1.17.4"
+  source = "git::https://github.com/poseidon/typhoon//digital-ocean/container-linux/kubernetes?ref=v$CLUSTER_VERSION"
 
   # Digital Ocean
-  cluster_name = "seventeen"
-  region       = "nyc3"
+  cluster_name = var.cluster_id
+  region       = var.cluster_region
   dns_zone     = "k8stfw.com"
   image        = "coreos-stable"
   # controller_type = "s-4vcpu-8gb"
@@ -14,6 +14,13 @@ module "cluster" {
 
   # optional
   worker_count = 2
+}
+
+terraform {
+  backend "gcs" {
+    bucket = "$TF_VAR_cluster_id"
+    prefix = "terraform/state"
+  }
 }
 
 # Obtain cluster kubeconfig

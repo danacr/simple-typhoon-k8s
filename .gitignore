@@ -1,3 +1,5 @@
 .terraform*
 terraform.*
 cluster-config
+do_token
+service-account-key.json
