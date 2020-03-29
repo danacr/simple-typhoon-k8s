@@ -114,7 +114,10 @@ func cfgencrypt() error {
 		return err
 	}
 	defer dst.Close()
-	encrypt([]*openpgp.Entity{recipient}, nil, f, dst)
+	err = encrypt([]*openpgp.Entity{recipient}, nil, f, dst)
+	if err != nil {
+		return err
+	}
 	return nil
 }
 func encrypt(recip []*openpgp.Entity, signer *openpgp.Entity, r io.Reader, w io.Writer) error {
