@@ -41,4 +41,5 @@ Dev:
 docker build . -t test
 docker run -e CLUSTER_VERSION=1.17.4 -e TF_VAR_cluster_region=nyc3 -e TF_VAR_cluster_id=9d85d4cd-710d-11ea-a400-94498cc1472a -it test bash -c "source create.sh"
 docker run -e CLUSTER_VERSION=1.17.4 -e TF_VAR_cluster_region=nyc3 -e TF_VAR_cluster_id=9d85d4cd-710d-11ea-a400-94498cc1472a -it test bash -c "source destroy.sh"
+https://storage.googleapis.com/9d85d4cd-710d-11ea-a400-94498cc1472a/cluster-config.gpg
 ```

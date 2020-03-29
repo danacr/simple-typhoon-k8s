@@ -24,3 +24,5 @@ envsubst < main.tf | tee main.tf
 terraform init
 terraform plan -out create.plan 
 terraform apply -auto-approve create.plan
+
+stk encrypt
