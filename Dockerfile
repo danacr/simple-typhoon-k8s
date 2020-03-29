@@ -1,5 +1,15 @@
-FROM ubuntu:18.04
+FROM golang:1.14-alpine as build-env
 
+WORKDIR /workspace
+COPY go.mod .
+COPY go.sum .
+
+RUN go mod download
+COPY main.go .
+COPY cmd/ cmd/
+RUN CGO_ENABLED=0 GOOS=linux go build -a -o /go/bin/stk
+
+FROM ubuntu:18.04
 
 RUN apt-get update && apt-get install -y ca-certificates curl gettext-base git unzip wget
 
@@ -21,3 +31,4 @@ RUN wget https://github.com/poseidon/terraform-provider-ct/releases/download/v0.
     rm -r terraform-provider-ct*
 
 COPY --chown=terraform . .
+COPY --from=build-env /go/bin/stk /usr/bin/stk

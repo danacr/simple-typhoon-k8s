@@ -17,6 +17,8 @@ curl -X POST -H "Content-Type: application/json" -H "$auth" -d "$payload" "https
 
 export GOOGLE_APPLICATION_CREDENTIALS=/home/terraform/service-account-key.json
 
+stk create
+
 envsubst < main.tf | tee main.tf
 
 terraform init

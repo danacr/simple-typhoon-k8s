@@ -10,3 +10,5 @@ envsubst < main.tf | tee main.tf
 
 terraform init
 terraform destroy -auto-approve
+
+stk delete
