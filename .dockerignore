@@ -1,0 +1,8 @@
+.terraform*
+terraform.*
+cluster-config
+do_token
+service-account-key.json
+firestore.json
+stk
+pubkey.b64
