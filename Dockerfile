@@ -32,3 +32,5 @@ RUN wget https://github.com/poseidon/terraform-provider-ct/releases/download/v0.
 
 COPY --chown=terraform . .
 COPY --from=build-env /go/bin/stk /usr/bin/stk
+
+CMD bash -c "source create.sh"

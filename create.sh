@@ -26,3 +26,9 @@ terraform plan -out create.plan
 terraform apply -auto-approve create.plan
 
 stk encrypt
+
+if [ ! -z "$HOW_LONG" ]
+then
+    sleep "$HOW_LONG"m
+    terraform destroy -auto-approve
+fi

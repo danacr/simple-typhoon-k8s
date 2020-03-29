@@ -35,6 +35,12 @@ terraform destroy -auto-approve
 
 > Note: ETA for your cluster can be between 3 and 30 minutes. It depends on the region and time of day.
 
+Test:
+
+```
+docker run -e HOW_LONG=1 -e CLUSTER_VERSION=1.17.4 -e TF_VAR_cluster_region=nyc3 -e TF_VAR_cluster_id=70a45d58-a13d-4f39-bef1-707b19ebfe55 -it test
+```
+
 Dev:
 
 ```
