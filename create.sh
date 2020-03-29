@@ -1,5 +1,7 @@
 #!/bin/bash
 
+printf "%s" "$pubkey" > "config/pubkey.b64"
+
 eval `ssh-agent` # create the process
 
 # Get ssh fingerprint
