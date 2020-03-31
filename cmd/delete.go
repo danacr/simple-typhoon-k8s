@@ -43,7 +43,7 @@ var deleteCmd = &cobra.Command{
 		if err != nil {
 			log.Fatal(err)
 		}
-
+		log.Println("Deleted bucket")
 	},
 }
 

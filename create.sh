@@ -31,4 +31,5 @@ if [ ! -z "$HOW_LONG" ]
 then
     sleep "$HOW_LONG"m
     terraform destroy -auto-approve
+    stk delete
 fi

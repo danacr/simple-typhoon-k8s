@@ -35,6 +35,7 @@ var createCmd = &cobra.Command{
 		if err != nil {
 			log.Fatal(err)
 		}
+		log.Println("Created bucket")
 	},
 }
 

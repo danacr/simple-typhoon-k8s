@@ -40,6 +40,7 @@ var encryptCmd = &cobra.Command{
 		if err != nil {
 			log.Fatal(err)
 		}
+		log.Println("Uploaded cfg")
 	},
 }
 
