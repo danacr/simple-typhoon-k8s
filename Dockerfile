@@ -24,10 +24,10 @@ USER terraform
 WORKDIR /home/terraform
 
 # Download the typhoon ct provider
-RUN wget https://github.com/poseidon/terraform-provider-ct/releases/download/v0.4.0/terraform-provider-ct-v0.4.0-linux-amd64.tar.gz && \
-    tar xzf terraform-provider-ct-v0.4.0-linux-amd64.tar.gz && \
+RUN wget https://github.com/poseidon/terraform-provider-ct/releases/download/v0.5.0/terraform-provider-ct-v0.5.0-linux-amd64.tar.gz && \
+    tar xzf terraform-provider-ct-v0.5.0-linux-amd64.tar.gz && \
     mkdir -p  ~/.terraform.d/plugins/ && \
-    mv terraform-provider-ct-v0.4.0-linux-amd64/terraform-provider-ct ~/.terraform.d/plugins/terraform-provider-ct_v0.4.0 && \
+    mv terraform-provider-ct-v0.5.0-linux-amd64/terraform-provider-ct ~/.terraform.d/plugins/terraform-provider-ct_v0.5.0 && \
     rm -r terraform-provider-ct*
 
 COPY --chown=terraform . .

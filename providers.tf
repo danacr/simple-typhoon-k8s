@@ -1,6 +1,6 @@
 
 provider "digitalocean" {
-  version = "1.14.0"
+  version = "1.15.1"
   token   = var.do_token
 }
 
@@ -10,7 +10,7 @@ provider "google" {
 }
 
 provider "ct" {
-  version = "0.4.0"
+  version = "0.5.0"
 }
 
 variable "cluster_id" {}
